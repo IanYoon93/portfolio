@@ -1,0 +1,297 @@
+@charset "UTF-8";
+/* css변수 - :root는 html을 의미, 변수명규칙 --변수명, IE11에서 안됨 */
+:root { --txt-point01:#96dfff; --txt-point02:#2086e5; }
+
+html { /* 브라우저 기본값 16px 대비 10px로 변환 */ font-size: 62.5%; }
+
+/* 반응형, 모바일에서 모든요소의 패딩,선을 크기안에 포함시킴 */
+/* 레이아웃에 관련되므로 운영코딩시에는 주의를 요함 */
+*,:before,:after {box-sizing: border-box;}
+
+/* body에 들어갈수있는 모든태그의 여백빼기 */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,address,code,em,img,strong,sub,sup,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figure,figcaption,footer,header,hgroup,menu,nav,section,main,audio,video {margin: 0; padding: 0;}
+
+/* html5추가 시멘틱엘리먼트를 익스하위버전에서 블럭으로 인식되도록함 */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main {display: block}
+
+/* button태그에 손모양 커서 */
+button {cursor: pointer;}
+/* button {cursor:auto;} */
+/* 익스하위버전에서 이미지 선없애기 */
+fieldset,img {border: 0; vertical-align: top;}
+
+/* 모바일, 반응형에서 이미지가 원본보다 커지지않게함 */
+img {max-width: 100%;}
+/* 리스트 기호 빼기 */
+ol,ul {list-style: none}
+/* 태그 기본 기울임꼴 제거 */
+address,em {font-style: normal}
+strong {font-weight: normal;}
+/* 벤더프리픽스: 브라우저 제조사를 의미 */
+/* -webkit- 크롬, 사파리, 다른브라우저에서 사용하기도함 */
+a { text-decoration: none; color: #000; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1); }
+/* 칸의 선을 합치기, 칸의 간격없애기, 가로를 늘려줌 */
+table {border-collapse: collapse; border-spacing: 0; width: 100%; table-layout: fixed;}
+/* 굵기 빼고 헤딩태그 폰트크기를 body에 선언한 크기와 일치시킴 */
+h1,h2,h3,h4,h5,h6 {font-weight: normal; font-size: 100%}
+/* 폼요소의 높이가 다를때 요소끼리 세로정렬시킴, ios 둥근모서리, 기본스타일 제거 */
+/* border-radius:0 -> iOS에서 테두리가 둥글게 나오므로 빼줌 */
+/* -webkit-appearance: none -> iOS에서 폼요소에 내부그림자가 나오므로 빼줌 */
+input, select, textarea, button { vertical-align: middle; margin: 0; padding: 0; border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1); }
+
+/* textarea 리사이즈기능 빼기 */
+textarea {resize: none}
+
+/* 모바일 크롬, 사파리의 텍스트 자동확대 방지*/
+body { -webkit-text-size-adjust: none }
+
+
+
+
+
+/*********************** 공통스타일 *************************/
+body,input,button,select,textarea,table { font-family: 'Alata','Noto Sans KR','맑은 고딕','malgun gothic','Apple SD Gothic Neo',sans-serif; font-size: 1.5rem; font-weight: 400; line-height: 2; color:#000; word-break: keep-all; background: #ebebeb; }
+
+/* Skip Navgation */
+#skip_navi {position: relative;}
+#skip_navi a { position: absolute; left: 0; top: -999px; width: 100%; padding: 10px 0; background: #fff; z-index: 99999; text-align: center }
+#skip_navi a:hover, #skip_navi a:active, #skip_navi a:focus {top:0}
+
+/* legend,caption,메뉴제목,섹션제목 블라인드 */
+legend, .blind { position: absolute; overflow: hidden; clip: rect(0 0 0 0); margin: -1px; width: 1px; height: 1px }
+
+/* 사파리, 크롬 thead없을경우 칸길이 조절안되는 caption버그 대응 */
+caption { overflow: hidden; clip: rect(0 0 0 0); margin: -1px; width: 1px; height: 1px }
+
+/* float해제 */
+.clearfix:after { content: ''; display: block; clear: both; }
+
+/* placeholder */
+::-webkit-input-placeholder {color:#bbbbbb;} /* Webkit,크롬,사파리 */
+:-moz-placeholder {color:#bbbbbb;} /* Firefox 4-18 */
+::-moz-placeholder {color:#bbbbbb; opacity:1;} /* Firefox 19+ */
+:-ms-input-placeholder {color:#bbbbbb !important;} /* IE10+ */
+
+/* 폼요소 공통 */
+/* IE x버튼, password 눈모양 안보이게 */
+input::-ms-clear, input::-ms-reveal { display: none; }
+
+/* input search x버튼 안보이게 */
+input::-webkit-search-decoration, input::-webkit-search-cancel-button, input::-webkit-search-results-button, input::-webkit-search-results-decoration{ display:none; }
+
+
+input[type=checkbox]:checked + label:after { width:24px; }
+
+
+
+/* 화살표제거 */
+select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+/* 익스 화살표 제거 */
+select::-ms-expand { display: none; }
+
+/* textarea 공통 */
+textarea { width:100%; border:none; background: #f8f8f8; padding:15px;}
+
+
+
+
+
+/* 모바일 최소단말기크기인 320으로 잡으면 그이하 화면은 대응할 필요없음 */
+#wrap { min-width: 320px; }
+
+#header { position: fixed; left: 0; top: 0; width: 100%; height: 100px; min-width: 320px; z-index: 9999; }
+
+#header .inner { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; }
+
+/* 헤더 fixed */
+#header.fixed .inner { background: #000; }
+#header.fixed .btn_open span { background: #fff; }
+
+#header .logo { width: 60px; height: 86px; }
+#header .logo img { width: 100%; height: 100%; }
+
+
+/* 전체메뉴 열기 */
+#header .btn_open { width: 30px; display: flex; flex-wrap: wrap; align-items: center; text-indent: -9999px; }
+
+/* 전체 메뉴 호버 */
+#header .btn_open:hover span { width: 30px; transition: all 0.5s; }
+#header .btn_open:hover span:nth-child(2) { width: 30px; transition: all 0.5s; }
+
+#header .btn_open span { width: 25px; height: 3px; background: #000; margin-bottom: 6px; }
+#header .btn_open span:nth-child(2) { width: 17px; }
+#header .btn_open span:nth-child(3) { width: 30px; }
+
+
+/* 전체 메뉴 */
+#header .full_menu_area {
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-width: 320px;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0;
+  background: #000;
+  z-index: 100;
+  overflow: auto;
+  display: none;
+}
+#header.on .full_menu_area { display: block; }
+
+#header .full_menu_area .menu_inner {
+  width: 1140px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+#header .full_menu_area .tit {
+  display: block;
+  font-size: 4rem;
+  font-weight: 600;
+  font-family: 'Montserrat',sans-serif;
+  color: #fff;
+  letter-spacing: 0.5em;
+  margin: 100px 0;
+  position: relative;
+}
+#header .full_menu_area .tit:after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  bottom: 24px;
+  width: 100%;
+  height: 10px;
+  background: var(--txt-point02);
+  z-index: -1;
+}
+
+#header .full_menu_wrap .full_menu { display: flex; }
+#header .full_menu_wrap .full_menu li { margin-right: 40px; }
+#header .full_menu_wrap .full_menu li:last-child { margin-right: 0; }
+#header .full_menu_wrap .full_menu li>a {
+  display: block;
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 15px;
+  position: relative;
+}
+#header .full_menu_wrap .full_menu li>a:hover:after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  bottom: 20px;
+  width: calc(100% + 10px);
+  height: 10px;
+  background: var(--txt-point01);
+  z-index: -1;
+  transition: all 0.3s;
+}
+
+/* 전체메뉴 닫기버튼 */
+#header .full_menu_area .btn_close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 54px;
+  height: 54px;
+  background: url(../images/btn_close.png) no-repeat;
+  text-indent: -9999px;
+}
+
+
+/* 섹션 제목공통 */
+.main_tit .tit { font-size: 5rem; font-family: 'Alata',sans-serif; }
+.main_tit .txt { font-size: 2rem; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; }
+
+
+/* 버튼 공통 */
+.btn_more {
+  display: block;
+  font-size: 1.2rem;
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  width: 150px;
+  margin-left: 50px;
+  position: relative;
+}
+.btn_more:before {
+  content: '';
+  position: absolute;
+  left: -50px;
+  top: -4px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.btn_more:hover:before {
+  width: calc(100% + 25px);
+  height: 52px;
+  border-radius: 26px;
+  left: -35px;
+  top: -14px;
+}
+
+
+/* 푸터 */
+#footer .inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; background: #000; }
+#footer p { font-size: 1.6rem; color: #fff; text-align: center; padding: 20px 0 ; }
+#footer .none { display: none; }
+
+#footer .btn_top {
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  width: 80px;
+  height: 80px;
+  background: url(../images/btn_top.gif) no-repeat 50% 50%;
+  text-indent: -9999px;
+}
+
+
+
+
+/* 태블릿 분기점 */
+@media (max-width: 1024px) {
+  #header { background: #000; }
+  #header .inner { height: 80px; }
+  #header .logo { height: 80px; }
+  #header .btn_open span { background: #fff; }
+
+  /* 전체 메뉴 */
+  #header .full_menu_area { padding: 100px 55px; }
+  #header .full_menu_area .menu_inner { flex-direction: column; }
+  #header .full_menu_area .tit { margin: 50px 0; }
+  #header .full_menu_wrap .full_menu { flex-direction: column; }
+  #header .full_menu_wrap .full_menu li { margin-right: 0; }
+
+  /* 푸터 */
+  #footer p { line-height: 24px; }
+  #footer .none { display: block; }
+  #footer .btn_top { right: 0px; width: 60px; height: 60px; }
+}
+
+
+/* 모바일 분기점 */
+@media (max-width: 767px) {
+  /* 전체메뉴 */
+  #header .full_menu_area { padding: 50px 20px; }
+  #header .full_menu_area .tit { margin: 30px 0; font-size: 3rem; }
+  #header .full_menu_area .tit:after { left: -8px; bottom: 15px; }
+  #header .full_menu_wrap .full_menu li>a { font-size: 2.8rem; }
+  #header .full_menu_wrap .full_menu li>a:hover:after { display: none; }
+  
+  /* 섹션 공통 */
+  .main_tit .tit { font-size: 4rem; }
+
+  /* 푸터 */
+  #footer p { font-size: 1.4rem; }
+}

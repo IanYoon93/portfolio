@@ -1,0 +1,313 @@
+@charset "UTF-8";
+
+/* 메인 인트로 */
+.main_intro { padding-top: 100px; }
+.main_intro .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  padding: 70px 100px;
+  margin: 0 auto;
+  background: #000;
+}
+.main_intro .tit_wrap { font-family: 'Alata', sans-serif; }
+.main_intro .tit_wrap h2 { font-size: 8rem; color: #fff; line-height: 1; letter-spacing: -0.05em; }
+.main_intro .tit_wrap p { font-size: 1.6rem; color: #fff; margin-top: 20px; }
+.main_intro .tit_wrap p + p { margin-top: 5px; }
+.main_intro .tit_wrap .none { display: none;}
+.main_intro .img_wrap { width: 354px; height: 472px; }
+
+
+/* 메인 어바웃 */
+.main_about .inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 100px 100px;
+  background: #fff;
+}
+.main_about .main_tit .txt span { font-weight: 400; color: #333; }
+.main_about .about_wrap { display: flex; margin-top: 50px; }
+.main_about .about_wrap .about_experience { display: flex; flex-direction: column; width: 50%;}
+.main_about .about_wrap .about_tit { font-size: 3.6rem; font-family: 'Alata',sans-serif; color: #000; }
+.main_about .about_wrap em { font-size: 2rem; font-weight: 500; font-family: 'Noto Sans KR', sans-serif; }
+.main_about .about_wrap .more { font-size: 1.6rem; font-weight: 500; color: #666; margin-top: 20px; }
+.main_about .about_wrap .none { display: none; }
+.main_about .about_wrap .btn_more { margin-top: 50px; }
+
+.main_about .about_wrap .about_skill { display: flex; flex-direction: column; width: 50%; }
+.main_about .about_wrap .about_skill .more { margin-top: 50px; }
+
+
+/* 메인 포트폴리오 */
+.main_portfolio .inner { max-width: 1100px; margin: 0 auto; padding: 70px 100px 100px; background: #000; }
+
+.main_portfolio .main_tit { color: #fff; }
+
+.main_portfolio .portfolio_list { margin-top: 50px; }
+.main_portfolio .portfolio_list li { padding: 45px 20px; }
+.main_portfolio .portfolio_list li + li { border-top: 2px solid #2c2c2c; }
+.main_portfolio .portfolio_list a { display: block; color: #fff; position: relative; }
+.main_portfolio .portfolio_list li:hover { background: #151515; }
+.main_portfolio .portfolio_list .number { font-size: 1.7rem; }
+.main_portfolio .portfolio_list .project { font-size: 3rem; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; margin-left: 15px; }
+.main_portfolio .portfolio_list p { font-size: 2rem; font-weight: 500; }
+.main_portfolio .portfolio_list span { font-size: 1.8rem; font-weight: 400; }
+.main_portfolio .portfolio_list .img_wrap {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  width: 350px;
+  height: 240px;
+  object-fit: cover;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.main_portfolio .portfolio_list .img_wrap:hover:before {
+  content: 'Click 해보세요';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
+  color: rgba(0.1, 0.1, 0.1, 0.6);
+  text-align: center;
+  margin-top: 100px;
+}
+.main_portfolio .portfolio_list .img_wrap img { width: 100%; height: 100%; }
+
+.main_portfolio .working {
+  font-size: 1.8rem;
+  color: #ddd;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* 모바일 더보기 버튼 */
+.main_portfolio .portfolio_list .none { margin-top: 15px; position: relative; display: none; }
+.main_portfolio .portfolio_list .none:before {
+  content: '';
+  position: absolute;
+  left: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 2px;
+  margin-top: 2px;
+  background: #fff;
+}
+.main_portfolio .portfolio_list .none:after {
+  content: '';
+  position: absolute;
+  left: 94px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 10px;
+  margin-top: 2px;
+  background: #fff;
+}
+
+
+/* 메인 에듀케이션 */
+.main_education .inner { padding: 70px 100px 100px; max-width: 1100px; margin: 0 auto; background: #fff; }
+
+.main_education .education li { display: flex; margin-top: 10px; }
+.main_education .education>li>p { font-size: 1.8rem; }
+.main_education .education .date { margin-right: 20px; padding-left: 20px; position: relative; max-width: 200px; width: 100%; }
+.main_education .education .date:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid #000;
+  border-radius: 50%;
+  margin-top: 2px;
+}
+
+
+/* 메인 스킬 */
+.main_skill .inner { padding: 70px 100px 100px; max-width: 1100px; margin: 0 auto; background: #000; }
+
+.main_skill .main_tit { color: #fff; }
+
+.main_skill .skill_wrap { margin-top: 50px; }
+.main_skill .skill_wrap li { display: flex; align-items: center; height: 60px; }
+.main_skill .skill_wrap li + li { margin-top: 30px; }
+.main_skill .skill_wrap .skill {
+  position: relative;
+  display: flex;
+  width: calc(100% - 70px);
+  height: 3px;
+  background: #545454;
+}
+.main_skill .skill_wrap .skill .txt {
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: 'Montserrat',sans-serif;
+  letter-spacing: 0.4em;
+}
+.main_skill .skill_wrap .skill .skill_bar {
+  position: absolute;
+  left: 0;
+  top: -30px;
+  width: 10%;
+  max-width: 97%;
+  height: 60px;
+  background: #fff;
+  z-index: 1;
+  transition: all 0.7s;
+}
+.main_skill .skill_wrap .skill .bg_skill {
+  position: absolute;
+  left: 0;
+  top: -30px;
+  width: 10%;
+  max-width: 99%;
+  height: 60px;
+  background: #000;
+  transition: all 0.7s;
+}
+.main_skill .skill_wrap .number { font-size: 2.2rem; font-family: 'Montserrat',sans-serif; color: #fff; margin-left: 30px; }
+
+
+/* 메인 컨택트 */
+.main_contact .inner { padding: 70px 100px 100px; max-width: 1100px; margin: 0 auto; background: #fff; }
+.main_contact .contact_wrap { display: flex; align-items: center; justify-content: space-between; }
+.main_contact .contact_wrap .txt { font-size: 2rem; font-family: 'Noto Sans KR', sans-serif; font-weight: 500; }
+.main_contact .contact_wrap .txt .none { display: none; }
+.main_contact .contact_wrap .txt strong { font-weight: 700; }
+.main_contact .contact_wrap .contact li { display: flex; }
+.main_contact .contact_wrap .contact li + li { margin-top: 20px; }
+.main_contact .contact_wrap .contact span {
+  display: block;
+  width: 100%;
+  max-width: 100px;
+  margin-right: 15px;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: right;
+}
+.main_contact .contact_wrap .contact li>a {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 38px;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  padding: 0 20px;
+  background: #151515;
+}
+.main_contact .contact_wrap .contact li>a:hover { background-color: #ededed; color: #222; }
+.main_contact .contact_wrap .contact li>p { font-size: 1.6rem; }
+.main_contact .contact_wrap .contact em { font-weight: 700; color: #163387; }
+.main_contact .contact_wrap .contact br { display: none; }
+
+
+
+
+
+/* 태블릿 분기점 */
+@media (max-width: 1024px) {
+  /* 메인 인트로 */
+  .main_intro { padding-top: 80px; }
+  .main_intro .inner { padding: 45px 45px 90px; }
+  .main_intro .tit_wrap h2 { font-size: 6.6rem; }
+  .main_intro .img_wrap { max-width: 300px; width: 100%; height: auto; }
+
+  /* 메인 어바웃 */
+  .main_about .inner { padding: 100px 45px; }
+  .main_about .about_wrap .none { display: block; }
+  .main_about .about_wrap .about_skill .more { margin-top: 80px; }
+
+  /* 메인 포트폴리오 */
+  .main_portfolio .inner { padding: 100px 45px; }
+  .main_portfolio .portfolio_list .project { font-size: 2.6rem; }
+  .main_portfolio .portfolio_list p { font-size: 1.8rem; }
+  .main_portfolio .portfolio_list span { font-size: 1.6rem; }
+  .main_portfolio .portfolio_list .img_wrap { width: 330px; height: 220px; }
+  .main_portfolio .working { font-size: 1.5rem; }
+
+  /* 메인 에듀케이션 */
+  .main_education .inner { padding: 100px 45px; }
+  .main_education .education>li>p { font-size: 1.6rem; }
+  .main_education .education .date { margin-right: 10px;}
+
+  /* 메인 스킬 */
+  .main_skill .inner { padding: 100px 45px; }
+
+  /* 메인 컨택트 */
+  .main_contact .inner { padding: 100px 45px; }
+  .main_contact .contact_wrap .txt { font-size: 1.8rem; }
+  .main_contact .contact_wrap .txt .none { display: block; }
+  .main_contact .contact_wrap .contact span { font-size: 1.8rem; }
+  .main_contact .contact_wrap .contact li>a { font-size: 1.6rem; }
+}
+
+
+
+/* 모바일 분기점 */
+@media (max-width: 767px) {
+  /* 메인 인트로 */
+  .main_intro .inner { padding: 30px 20px 55px; flex-wrap: wrap-reverse; }
+  .main_intro .tit_wrap { margin-top: 50px; }
+  .main_intro .tit_wrap h2 { font-size: 5rem; }
+  .main_intro .tit_wrap .none { display: block; }
+
+  /* 메인 어바웃 */
+  .main_about .inner { padding: 50px 20px; }
+  .main_about .about_wrap { flex-direction: column; margin-top: 30px; }
+  .main_tit .txt { font-size: 1.7rem; }
+  .main_about .about_wrap .about_experience { width: 100%; }
+  .main_about .about_wrap .about_skill { margin-top: 30px; width: 100%; }
+  .main_about .about_wrap .about_skill .more { margin-top: 20px; }
+
+  /* 메인 포트폴리오 */
+  .main_portfolio .inner { padding: 50px 20px; }
+  .main_portfolio .portfolio_list { margin-top: 30px; }
+  .main_portfolio .portfolio_list li { padding: 35px 10px; }
+  .main_portfolio .portfolio_list .project { font-size: 2rem; }
+  .main_portfolio .portfolio_list .img_wrap { display: none; }
+  .main_portfolio .portfolio_list .none { display: block; }
+
+  /* 메인 에듀케이션 */
+  .main_education .inner { padding: 30px 20px; }
+  .main_education .education li { flex-direction: column;}
+  .main_education .education>li>p { font-size: 1.4rem; }
+  .main_education .education .txt { margin-left: 20px;}
+
+  /* 메인 스킬 */
+  .main_skill .inner { padding: 30px 20px; }
+  .main_skill .skill_wrap { margin-top: 15px; }
+  .main_skill .skill_wrap .skill .txt { left: 10px; letter-spacing: 0.1em; }
+  .main_skill .skill_wrap .skill .skill_bar { height: 50px; }
+  .main_skill .skill_wrap .skill .bg_skill { height: 50px; }
+
+  /* 메인 컨택트 */
+  .main_contact .inner { padding: 30px 20px; }
+  .main_contact .contact_wrap { flex-direction: column; align-items: flex-start; }
+  .main_contact .contact_wrap .txt { font-size: 1.6rem; }
+  .main_contact .contact_wrap .txt .none { display: none; }
+  .main_contact .contact_wrap .contact { margin-top: 30px; }
+  .main_contact .contact_wrap .contact span {
+    font-size: 1.6rem;
+    text-align: left;
+    margin-right: 8px;
+    max-width: 62px;
+  }
+  .main_contact .contact_wrap .contact li>a { font-size: 1.4rem; }
+  .main_contact .contact_wrap .contact br { display: block; }
+}
